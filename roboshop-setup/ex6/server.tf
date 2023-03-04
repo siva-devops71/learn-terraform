@@ -14,5 +14,5 @@ resource "aws_route53_record" "frontend" {
   name    = "frontend-dev.devops71.online"
   type    = "A"
   ttl     = 30
-  records = [aws_spot_instance_request.frontend.private_ip]
+  records = [aws_spot_instance_request.frontend]
 }
