@@ -1,6 +1,6 @@
 resource "aws_spot_instance_request" "frontend" {
   ami = "ami-0a017d8ceb274537d"
-  spot_price = "low amount"
+  spot_price = "0.010"
   spot_type = "persistent"
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-09d7039fc04d628ea"]
