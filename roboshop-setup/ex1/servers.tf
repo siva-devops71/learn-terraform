@@ -1,3 +1,9 @@
+data "aws_ami" "ami" {
+  most_recent = true
+  name_regex  = "Centos-8-DevOps-Practice"
+  owners      = ["973714476881"]
+}
+
 resource "aws_instance" "frontend" {
   ami = "ami-0a017d8ceb274537d"
   instance_type = "t3.micro"
@@ -182,4 +188,9 @@ resource "aws_route53_record" "payment" {
   type    = "A"
   ttl     = 30
   records = [aws_instance.payment.private_ip]
+}
+
+
+output "rabbitmq" {
+  value = "Public IP address  = ${aws_instance.rabbitmq.public_ip}"
 }
