@@ -103,7 +103,7 @@ resource "aws_instance" "user"  {
 
 resource "aws_route53_record" "user" {
   zone_id = "Z04391752LS917TT76G1F"
-  name    = "mongodb-dev.devops71.online"
+  name    = "user-dev.devops71.online"
   type    = "A"
   ttl     = 30
   records = [aws_instance.user.private_ip]
